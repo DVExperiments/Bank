@@ -13,3 +13,5 @@ The Bank opens on 1 February 2027. Its simulation lives in the Pixel Exchange's 
 | `bank.css` | Styles, on Glacial's tokens. |
 
 The home-loan applicants at the counter are real residents from the Census Office, decided as the Bank would on the day from their working lives; they illustrate the Bank's lending, which is computed district by district.
+
+The Bank's board also shows student loans: Pixel University fees owed by residents, from working lives (`labour.universityAt(t).loanBook`).

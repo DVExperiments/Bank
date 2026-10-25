@@ -49,7 +49,8 @@
         row('Home loans', mw(b.mortgages), b.arrears.toFixed(1) + '% in arrears', b.arrears > 4 ? 'warn' : ''),
         row('Business overdrafts', mw(b.overdrafts), num(b.borrowerCount) + ' businesses borrowing'),
         row('Start-up loans', mw(b.startup), 'Lent to businesses opening in empty premises'),
-        row('Deposits', mw(b.deposits), 'Pixels save more when they\u2019re nervous')].join('');
+        row('Deposits', mw(b.deposits), 'Pixels save more when they\u2019re nervous'),
+        (() => { const u = L && L.universityAt ? L.universityAt(t) : null; return u && u.open ? row('Student loans', mw(u.loanBook), num(u.loans) + ' pixels repaying Pixel University fees') : ''; })()].join('');
       const hist = B.historyBetween(t - 365 * DAY, t);
       return '<section class="page-head"><p class="kicker">The Bank of Pixel City at the close of ' + esc(fDate.format(cityMs(Date.parse(b.asOf)))) + '.</p><h1 class="status">The Bank is ' + mood + ', at ' + pct(b.rate) + '.</h1></section>' +
         '<figure class="screen board freight"><table><thead><tr><th>The vault</th><th class="n">Now</th><th></th></tr></thead><tbody>' + board + '</tbody></table>' +
